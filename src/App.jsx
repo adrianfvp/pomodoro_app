@@ -1,9 +1,10 @@
 import './App.css'
+import NormalReloj from './assets/componentes/reloj'
 
-function App() {
-
+function App (){
   return (
     <div className="App">
+      <NormalReloj/>
     </div>
   )
 }

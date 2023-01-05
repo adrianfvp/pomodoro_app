@@ -1,0 +1,39 @@
+@keyframes shadow {
+  0% {box-shadow: 0 0 50px #51336b;}
+  50% {box-shadow: 0 0 200px #613e7f;}
+  100% {box-shadow: 0 0 50px #51336b;}
+}
+
+.reloj {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border: 30px solid #362247;
+    border-radius: 50%;
+    position: relative;
+    background-color: #221032;
+    animation-name: shadow;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  } 
+  
+  .reloj span {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: rgb(220, 217, 217);
+    text-shadow: 5px 0px 20px rgb(48, 14, 14);
+  }
+  
+  .status {
+    position: absolute;
+    transform: translate(10%, 200%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+  }
