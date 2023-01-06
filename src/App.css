@@ -25,4 +25,27 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+/* .panel {
+  width: 500px;
+  height: 80px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(31, 11, 34);
+  
+} */
+
+.btn {
+  padding: 10px;
+  border-radius: 999px;
+  height: 40px;
+  border: transparent;
+  background-color: #a552c5;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
