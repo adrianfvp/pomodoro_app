@@ -3,31 +3,40 @@ import { useEffect, useState } from 'react'
 
 
 export default function PomodoroReloj () {
+  const pomodoro = {
+    timeStamp: 1671155714711,
+    timeSetPomodoro: '30'
+  }
     
-    const [hour, setHour] = useState('00')
     const [minutes, setMinutes] = useState('00')
     const [seconds, setseconds] = useState('00')
     
     useEffect(() => {
         const interval = setInterval(() => {
             const date = new Date()
-            const h = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()
-            const m = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()
-            const s = date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds()
-            setHour(h)
-            setMinutes(m)
-            setseconds(s)
+
+            const timePomodoro = pomodoro.timeSetPomodoro * 60 * 1000
+            const timePomodoroEnd = pomodoro.timeStamp + timePomodoro
+            const timePomodoroEnd2 = timePomodoroEnd - actualTime
+
+            const m = new Date(timePomodoroEnd2)
+            const s = new Date(timePomodoroEnd2)
+            
+            const pMinutes = m.getMinutes() < 10 ? `0${date.getMinutes()}` : m.getMinutes()
+            const pSeconds = s.getSeconds() < 10 ? `0${date.getSeconds()}` : m.getSeconds()
+
+            setMinutes(pMinutes)
+            setseconds(pSeconds)
         }, 1000)
 
         return () => clearInterval(interval)
-    }, [hour, minutes, seconds])
+    }, [minutes, seconds])
             
 
     return (
       <div className='reloj'>
         <p className='status'>Pomodoro</p>
         <span>
-          <span className='hour'>{hour}:</span>
           <span className='minute'>{minutes}:</span>
           <span className='second'>{seconds}</span>
         </span>
